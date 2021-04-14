@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     SensorEventListener listener;
 
     private float[] magValues, accValues;
+    private SensorEventListener sensorListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-
+        sensorManager.unregisterListener(sensorListener);
     }
 
     @Override
